@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+    <link rel="stylesheet" content="text/css" href="./assets/css/style.css">
+    <title>Quiz!</title>
+</head>
+
+<body>
+    <h1>Take the quiz and win a prize!</h1>
+
+
+    <form id="quiz" name="quiz">
+
+
+        <p class="questions">What is the capital of Rhode Island?</p>
+        <input id="textbox" type="text" name="question1">
+
+        <p class="questions">What is the capital of Connecticut?</p>
+        <input type="radio" id="mc" name="question2" value="Hartford"> Hartford
+        <br>
+        <input type="radio" id="mc" name="question2" value="Heartford"> Heartford
+        <br>
+
+        <p class="questions">What is the capital of New York?</p>
+
+        <input type="radio" id="mc" name="question3" value="Albany"> Albany
+        <br>
+        <input type="radio" id="mc" name="question3" value="All Benny's"> All Benny's
+        <br>
+
+
+        <input id="button" type="button" value="I'm finished!" onclick="checkAnswers();">
+
+
+    </form>
+
+    <div id="on-submit">
+        <p id="number-correct"></p>
+        <p id="message"></p>
+    </div>
+
+
+
+    <script src="./assets/javascript/game.js" type="text/javascript"></script>
+</body>
+
+</html>
