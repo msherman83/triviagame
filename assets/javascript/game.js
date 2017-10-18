@@ -12,24 +12,52 @@
 // QUESTION AND ANSWER OBJECT
 
 
+// Launch Start Modal when page loads and vertically center on any screen size.
+$(document).ready(function () {
+    $("#myModal").modal('show');
+
+    function alignModal() {
+        var modalDialog = $(this).find(".modal-dialog");
+        // Applying the top margin on modal dialog to align it vertically center 
+        modalDialog.css("margin-top", Math.max(0, ($(window).height() - modalDialog.height()) / 2));
+    }
+    // Align modal when it is displayed
+    $(".modal").on("shown.bs.modal", alignModal);
+
+    // Align modal when user resize the window
+    $(window).on("resize", function () {
+        $(".modal:visible").each(alignModal);
+    });
+});
+
+
+
 function checkAnswers() {
 
     var correct = 0;
     var question1 = document.quiz.question1.value;
     var question2 = document.quiz.question2.value;
     var question3 = document.quiz.question3.value;
+    var question4 = document.quiz.question4.value;
+    var question5 = document.quiz.question5.value;
 
-    if (question1 == "Providence") {
+    if (question1 == "silver-arrow") {
         correct++;
     }
-    if (question2 == "Hartford") {
+    if (question2 == "smb3") {
         correct++;
     }
-    if (question3 == "Albany") {
+    if (question3 == "magic-mirror") {
+        correct++;
+    }
+    if (question4 == "egging-it") {
+        correct++;
+    }
+    if (question5 == "world-class") {
         correct++;
     }
 
-    var messages = ["You killed it, son!", "You did ok...", "You suck!"];
+    var messages = ["A winner is you!", "You did ok...", "Sorry.  The princess is in another castle... :("];
 
     var range;
 
@@ -37,7 +65,7 @@ function checkAnswers() {
         range = 2;
     }
 
-    if (correct > 0 && correct < 3) {
+    if (correct > 0 && correct < 5) {
         range = 1
     }
 
