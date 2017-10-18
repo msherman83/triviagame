@@ -16,6 +16,7 @@
 $(document).ready(function () {
     $("#myModal").modal('show');
 
+
     function alignModal() {
         var modalDialog = $(this).find(".modal-dialog");
         // Applying the top margin on modal dialog to align it vertically center 
@@ -29,6 +30,28 @@ $(document).ready(function () {
         $(".modal:visible").each(alignModal);
     });
 });
+
+
+// Timer to start on clicking START.
+$("#start").click(function () {
+
+    var timer2 = "1:00";
+    var interval = setInterval(function () {
+
+
+        var timer = timer2.split(':');
+        var minutes = parseInt(timer[0], 10);
+        var seconds = parseInt(timer[1], 10);
+        --seconds;
+        minutes = (seconds < 0) ? --minutes : minutes;
+        if (minutes < 0) clearInterval(interval);
+
+        seconds = (seconds < 0) ? 59 : seconds;
+        seconds = (seconds < 10) ? '0' + seconds : seconds;
+        $('#timer').html(minutes + ':' + seconds);
+        timer2 = minutes + ':' + seconds;
+    }, 1000);
+})
 
 
 
@@ -57,7 +80,8 @@ function checkAnswers() {
         correct++;
     }
 
-    var messages = ["A winner is you!", "You did ok...", "Sorry.  The princess is in another castle... :("];
+    var messages = ["Good job!", "You did ok...", "Better luck next time!"];
+    var images = ["./assets/img/winner-is-you.jpg", "./assets/img/congrats.jpg", "./assets/img/another-castle.jpg"];
 
     var range;
 
@@ -77,24 +101,10 @@ function checkAnswers() {
 
     document.getElementById("message").innerHTML = messages[range];
     document.getElementById("number-correct").innerHTML = "You got " + correct + " correct!";
+    document.getElementById("images").src = images[range];
 }
 
 
 
-// var timer2 = "1:01";
-// var interval = setInterval(function () {
 
-
-//     var timer = timer2.split(':');
-//     var minutes = parseInt(timer[0], 10);
-//     var seconds = parseInt(timer[1], 10);
-//     --seconds;
-//     minutes = (seconds < 0) ? --minutes : minutes;
-//     if (minutes < 0) clearInterval(interval);
-
-//     seconds = (seconds < 0) ? 59 : seconds;
-//     seconds = (seconds < 10) ? '0' + seconds : seconds;
-//     $('.countdown').html(minutes + ':' + seconds);
-//     timer2 = minutes + ':' + seconds;
-// }, 1000);
 
