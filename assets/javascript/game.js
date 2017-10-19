@@ -54,7 +54,13 @@ $("#start").click(function () {
 })
 
 
+// Reload page upon closeout of answer modal.
+$("#reload").click(function () {
+    location.reload();
+});
 
+
+// Logic for anwers.
 function checkAnswers() {
 
     var correct = 0;
