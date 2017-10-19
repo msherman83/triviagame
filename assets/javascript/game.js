@@ -57,7 +57,7 @@ $("#start").click(function () {
 
 
 // Reload page upon closeout of answer modal.
-$("#reload").click(function () {
+$(".reload").click(function () {
     location.reload();
 });
 
