@@ -13,7 +13,7 @@
         crossorigin="anonymous">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
-        crossorigin="anonymous"> 
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
     <link rel="stylesheet" content="text/css" href="./assets/css/style.css">
     <script src="https://use.fontawesome.com/6d9c176f3b.js"></script>
@@ -22,6 +22,9 @@
 </head>
 
 <body>
+
+<!-- MODAL HELL -->
+
     <!-- Page Load Modal -->
     <div class="container">
         <div class="modal fade" id="myModal" role="dialog">
@@ -44,147 +47,167 @@
             </div>
 
         </div>
-        </div>
+    </div>
 
- 
+    <!-- Answer Modal -->
+    <div id="answersModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
 
-        <!-- Answer Modal -->
-        <div id="answersModal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-
-                <!-- Modal content-->
-                <div class="modal-content text-center">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Score</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div id="on-submit" class="text-center">
-                            <p id="number-correct"></p>
-                            <p id="message"></p>
-                            <img id="images" class="endingImages">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="reload" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!-- Modal content-->
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Score</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="on-submit" class="text-center">
+                        <p id="number-correct"></p>
+                        <p id="message"></p>
+                        <img id="images" class="endingImages">
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button id="reload" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Times Up Modal -->
+    <div id="timesUpModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content text-center">
+                <div class="modal-body">
+                    <div class="times-up">
+                        GAME OVER!
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="reload" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- END OF MODAL HELL -->
+
+
+    <header>
+        <div class="text-center">
+            <img src="./assets/img/header.png">
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+
+            </div>
+            <div class="col-lg-4 text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Timer</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div id="timer">0:00</div>
+                        <div id="expired"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
 
             </div>
         </div>
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
 
-        <header>
-            <div class="text-center">
-                <img src="./assets/img/header.png">
             </div>
-        </header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
+            <div class="col-lg-8">
+                <div class="well">
+                    <section>
+                        <form id="quiz" name="quiz">
 
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Timer</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div id="timer">0:00</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
+                            <p class="questions">In order to defeat the final boss in the original Legend of Zelda you had to use a...</p>
+                            <input type="radio" id="mc" name="question1" value="magic-sword"> Magic Sword
+                            <br>
+                            <input type="radio" id="mc" name="question1" value="ocarina"> Ocarina
+                            <br>
+                            <input type="radio" id="mc" name="question1" value="magic-spell"> Magic Spell Scepter
+                            <br>
+                            <input type="radio" id="mc" name="question1" value="silver-arrow"> Silver Arrow
+                            <br>
+                            <br>
 
+                            <p class="questions">Before its North Amerrican release this famous game was featured in the film "The Wizard".</p>
+                            <input type="radio" id="mc" name="question2" value="ninja-gaiden"> Ninja Gaiden
+                            <br>
+                            <input type="radio" id="mc" name="question2" value="double-dragon"> Double Dragon
+                            <br>
+                            <input type="radio" id="mc" name="question2" value="savage-freddy"> Savage Freddy
+                            <br>
+                            <input type="radio" id="mc" name="question2" value="smb3"> Super Mario Bros 3
+                            <br>
+                            <br>
+
+                            <p class="questions">In the Legend of Zelda - A Link to the Past. In order to travel between the dark world and light
+                                world Link used a...
+                            </p>
+                            <input type="radio" id="mc" name="question3" value="magic-wand"> Magic Wand
+                            <br>
+                            <input type="radio" id="mc" name="question3" value="magic-mirror"> Magic Mirror
+                            <br>
+                            <input type="radio" id="mc" name="question3" value="magic-scepter"> Magic Scepter
+                            <br>
+                            <input type="radio" id="mc" name="question3" value="old-shoe"> Old Shoe
+                            <br>
+                            <br>
+
+                            <p class="questions">In Super Mario Bros 2. The first boss you encounter was defeated by...</p>
+
+                            <input type="radio" id="mc" name="question4" value="jumping-on-it"> Jumping on it
+                            <br>
+                            <input type="radio" id="mc" name="question4" value="fireballs"> Shooting fireballs at it.
+                            <br>
+                            <input type="radio" id="mc" name="question4" value="darts"> Throwing darts at it.
+                            <br>
+                            <input type="radio" id="mc" name="question4" value="egging-it"> Egging it
+                            <br>
+                            <br>
+
+                            <p class="questions">The NES Power Pad was bundled with which game?
+                            </p>
+
+                            <input type="radio" id="mc" name="question5" value="stadium-events"> Stadium Events
+                            <br>
+                            <input type="radio" id="mc" name="question5" value="smb"> Super Mario Bros
+                            <br>
+                            <input type="radio" id="mc" name="question5" value="track-field"> Track and Field
+                            <br>
+                            <input type="radio" id="mc" name="question5" value="world-class"> World Class Track Meet
+                            <br>
+                            <br>
+                            <div class="text-center">
+                                <input id="button" class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#answersModal" value="SUBMIT!"
+                                    onclick="checkAnswers();">
+                            </div>
+
+
+                        </form>
+
+                    </section>
                 </div>
             </div>
-        </div>
+            <div class="col-lg-2">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-2">
-
-                </div>
-                <div class="col-lg-8">
-                    <div class="well">
-                        <section>
-                            <form id="quiz" name="quiz">
-
-                                <p class="questions">In order to defeat the final boss in the original Legend of Zelda you had to use a...</p>
-                                <input type="radio" id="mc" name="question1" value="magic-sword"> Magic Sword
-                                <br>
-                                <input type="radio" id="mc" name="question1" value="ocarina"> Ocarina
-                                <br>
-                                <input type="radio" id="mc" name="question1" value="magic-spell"> Magic Spell Scepter
-                                <br>
-                                <input type="radio" id="mc" name="question1" value="silver-arrow"> Silver Arrow
-                                <br>
-                                <br>
-
-                                <p class="questions">Before its North Amerrican release this famous game was featured in the film "The Wizard".</p>
-                                <input type="radio" id="mc" name="question2" value="ninja-gaiden"> Ninja Gaiden
-                                <br>
-                                <input type="radio" id="mc" name="question2" value="double-dragon"> Double Dragon
-                                <br>
-                                <input type="radio" id="mc" name="question2" value="savage-freddy"> Savage Freddy
-                                <br>
-                                <input type="radio" id="mc" name="question2" value="smb3"> Super Mario Bros 3
-                                <br>
-                                <br>
-
-                                <p class="questions">In the Legend of Zelda - A Link to the Past. In order to travel between the dark world and
-                                    light world Link used a...
-                                </p>
-                                <input type="radio" id="mc" name="question3" value="magic-wand"> Magic Wand
-                                <br>
-                                <input type="radio" id="mc" name="question3" value="magic-mirror"> Magic Mirror
-                                <br>
-                                <input type="radio" id="mc" name="question3" value="magic-scepter"> Magic Scepter
-                                <br>
-                                <input type="radio" id="mc" name="question3" value="old-shoe"> Old Shoe
-                                <br>
-                                <br>
-
-                                <p class="questions">In Super Mario Bros 2. The first boss you encounter was defeated by...</p>
-
-                                <input type="radio" id="mc" name="question4" value="jumping-on-it"> Jumping on it
-                                <br>
-                                <input type="radio" id="mc" name="question4" value="fireballs"> Shooting fireballs at it.
-                                <br>
-                                <input type="radio" id="mc" name="question4" value="darts"> Throwing darts at it.
-                                <br>
-                                <input type="radio" id="mc" name="question4" value="egging-it"> Egging it
-                                <br>
-                                <br>
-
-                                <p class="questions">The NES Power Pad was bundled with which game?
-                                </p>
-
-                                <input type="radio" id="mc" name="question5" value="stadium-events"> Stadium Events
-                                <br>
-                                <input type="radio" id="mc" name="question5" value="smb"> Super Mario Bros
-                                <br>
-                                <input type="radio" id="mc" name="question5" value="track-field"> Track and Field
-                                <br>
-                                <input type="radio" id="mc" name="question5" value="world-class"> World Class Track Meet
-                                <br>
-                                <br>
-                                <div class="text-center">
-                                    <input id="button" class="btn btn-success btn-lg" type="button" data-toggle="modal" data-target="#answersModal" value="SUBMIT!"
-                                        onclick="checkAnswers();">
-                                </div>
-
-
-                            </form>
-                           
-                        </section>
-                    </div>
-                </div>
-                <div class="col-lg-2">
-
-                </div>
             </div>
         </div>
+    </div>
     </div>
     <footer>
         <p>&copy 2017 Mike Sherman</p>

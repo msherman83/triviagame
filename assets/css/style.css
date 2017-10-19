@@ -19,6 +19,12 @@ img {
     padding: 0 10px 0 10px;
 }
 
+.times-up {
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+}
+
 #timer {
     font-size: 35px;
     font-weight: bold;
